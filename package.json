@@ -1,0 +1,25 @@
+{
+  "name": "rollup-plugin-json-cmd",
+  "version": "1.0.0",
+  "description": "execute command in json",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hhucqian/rollup-plugin-json-cmd.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "keywords": [
+    "vite-plugin",
+    "rollup-plugin"
+  ],
+  "author": "Yangtze Coder",
+  "license": "Apache License 2.0",
+  "devDependencies": {
+    "@types/node": "^18.14.0",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.2"
+  }
+}
