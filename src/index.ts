@@ -1,15 +1,15 @@
 import { execSync } from 'child_process'
 import { readFile } from 'fs/promises'
-import { resolve } from 'path'
+import { resolve, normalize } from 'path'
 
 import type { Plugin } from 'rollup'
 
 export default function myPlugin(fileName: string): Plugin {
-    fileName = resolve(fileName)
+    const fullfileName = normalize(resolve(fileName))
     return {
         name: "json-cmd",
         async load(id) {
-            if (id === fileName) {
+            if (normalize(id) == fullfileName) {
                 const content = await readFile(id)
                 const obj: Record<string, string> = JSON.parse(content.toString())
                 for (const k in obj) {
